@@ -8,10 +8,10 @@ fn main() {
     let count = stdin.lock().lines().next().unwrap().unwrap();
     
     for line in stdin.lock().lines() {
-        let bytes: Vec<i8> = line.unwrap().as_bytes().iter().map(|x| *x as i8).collect();
+        let line = line.unwrap();
         let mut result = 0;
-        let mut iter = bytes.iter();
-        while let(Some(&a), Some(&b)) = (iter.next(), iter.next_back()) {
+        let mut iter = line.bytes().map(|x| x as i8);
+        while let(Some(a), Some(b)) = (iter.next(), iter.next_back()) {
             result += (b - a).abs();
         }
         println!("{}", result);
