@@ -1,6 +1,5 @@
 // https://www.hackerrank.com/challenges/solve-me-first
 
-
 use std::io;
 use std::io::prelude::*;
 

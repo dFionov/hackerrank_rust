@@ -24,14 +24,12 @@ fn max_xor(l: u32, r: u32) -> u32 {
 fn main() {
     let stdin = io::stdin();
 
-    //One thing i hate in rust:
     let l: u32 = stdin.lock().lines()
         .next().unwrap().unwrap()
         .trim().parse().unwrap();
     let r: u32 = stdin.lock().lines()
         .next().unwrap().unwrap()
         .trim().parse().unwrap();
-    //is it possible to do it with less unwraps? :) lol
 
     println!("{}", max_xor(l, r));
 }
